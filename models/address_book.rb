@@ -64,4 +64,8 @@ class AddressBook
     return nil
   end
 
+  def wipe_out
+       entries.clear
+  end
+
 end

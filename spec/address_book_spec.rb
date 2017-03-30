@@ -130,4 +130,15 @@ RSpec.describe AddressBook do
     end
   end
 
+  describe "#wipe_out" do
+    it "deletes address book" do
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+
+      book.wipe_out
+      expect(book.entries.size).to eq(0)
+    end
+  end
+
 end
