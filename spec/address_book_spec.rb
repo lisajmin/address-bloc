@@ -39,6 +39,12 @@ RSpec.describe AddressBook do
       expect(new_entry.phone_number).to eq('010.012.1815')
       expect(new_entry.email).to eq('augusta.king@lovelace.com')
     end
+
+    it "adds more than one entry" do
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+      book.add_entry('Homer Simpson', '000.000.0000', 'homer@springfield.com')
+      expect(book.entries.size).to eq(2)
+    end
   end
 
   describe "#import_from_csv" do
